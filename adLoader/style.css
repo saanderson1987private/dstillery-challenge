@@ -1,0 +1,14 @@
+
+#main {
+  font-family: monospace;
+}
+
+.img-container {
+  margin-left: 20px;
+  text-align: center;
+}
+
+.part {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,11 @@
+$ Tic-Tac-Toe
+
+I know that the directions said to spend only a few hours on the problems, I got a little carried away with Tic-Tac-Toe because I really enjoyed building it, so I went ahead and polished it off.
+
+The game begins by the user clicking on a button to specify if the game will be one player or two player. The first player is always 'X'. The squares are colored based on the marking, red for 'X', green for 'Y'. The squares are made the current player's color if hovered upon.
+
+I have created a few classes for code organization and readability: Grid, Player, and Game.
+
+The core function of the application is `Grid.showsWinWith`. This function not only determines whether a player has won or not with a particular move, but also gives the computer player the ability to determine a strategic move. The computer player scans through the open squares and checks each one to see if by placing a mark on it, it will make a winning sequence. If so, it places the mark there. If no open squares cause the function to return true, then it scans through the open squares again and uses the function see if any of the squares will cause the human player to win. If so, the computer places a mark on that square, blocking the human player’s win.
+
+`Grid.showsWinWith` works by taking in two arguments, a square element and and a mark, and checking to see if there is a winning sequence if the square element is marked. The function covers every possible winning sequence, but narrows down which sequences to check based on the position of the square argument. For example, if the top left square is the square argument (row 0, column 0), then the function checks to see if the the other squares on row 0 carry the mark indicated by the second argument, and so forth. To do this it relies on a helper function, `hasCurMark`. `hasCurMark` is a curried function. It references the function `Grid.hasMark(mark)` , passing in `Grid.showsWinWith`’s mark argument. `Grid.hasMark(mark)` returns a function that takes in the squares that it checks to see if the mark is there. The point of this is to allow for more cleaner, more readable code in the switch and if statements that provide the core logic of the game.

@@ -1,0 +1,106 @@
+:root {
+  --grid-border: 1px solid black;
+  --square-size: 80px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  min-height: 100%;
+  background: radial-gradient(#d5d5ff, #3f3faf );
+}
+
+.header {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  background: white;
+  margin: 0;
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+
+#grid-container {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: max-content;
+  height: max-content;
+}
+
+.grid {
+  background: white;
+}
+
+.row {
+  list-style: none;
+  margin: 0px;
+}
+
+.square {
+  border-right: var(--grid-border);
+  border-bottom: var(--grid-border);
+  display: inline-block;
+  width: var(--square-size);
+  height: var(--square-size);
+  line-height: var(--square-size);
+  text-align: center;
+  color: transparent;
+  cursor: default;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 60px;
+}
+
+.square:first-of-type {
+  border-left: var(--grid-border);
+}
+
+.row:first-of-type .square {
+  border-top: var(--grid-border);
+}
+
+.marked {
+  color: black;
+}
+
+.modal {
+  z-index: 1;
+  display: none;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: max-content;
+  height: max-content;
+  font-family: 'Quicksand', sans-serif;
+  padding: 40px;
+  font-size: 60px;
+  background: #989292;
+  border-radius: 20px;
+
+}
+
+#start-game{
+  display: initial;
+}
+
+.button {
+  width: max-content;
+  margin: 0 auto;
+  font-size: 40px;
+  background: #c4def5;
+  padding: 10px 15px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.button:hover{
+  background: #2e776b;
+}
